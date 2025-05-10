@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ParallaxSection } from "@/components/parallax-section";
-import { AnimatedGlobe } from "@/components/animated-globe";
+
 import { ScrollAnimation } from "@/components/scroll-animation";
 import { InfiniteCarousel } from "@/components/infinite-carousel";
 import { CallToAction } from "@/components/call-to-action";
@@ -111,8 +111,8 @@ export default function Home() {
               </h3>
               <p className="text-gray-300 mb-8">
                 We aim to simplify complex challenges through tailored software
-                solutions. Whether you're a startup or an enterprise, we help
-                you move faster, work smarter, and stay ahead of the curve.
+                solutions. Whether you&apos;re a startup or an enterprise, we
+                help you move faster, work smarter, and stay ahead of the curve.
               </p>
               <Link
                 href="#"
