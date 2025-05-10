@@ -1,49 +1,58 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 export function ParallaxSection() {
-  const sectionRef = useRef<HTMLDivElement>(null)
-  const [scrollY, setScrollY] = useState(0)
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       if (sectionRef.current) {
-        const rect = sectionRef.current.getBoundingClientRect()
+        const rect = sectionRef.current.getBoundingClientRect();
         // Only update when section is visible
         if (rect.top < window.innerHeight && rect.bottom > 0) {
-          setScrollY(window.scrollY)
+          setScrollY(window.scrollY);
         }
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll, { passive: true })
+    window.addEventListener("scroll", handleScroll, { passive: true });
     // Initial calculation
-    handleScroll()
+    handleScroll();
 
     return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   // Calculate parallax offset - subtle movement
   const calculateParallax = () => {
-    if (!sectionRef.current) return { y: 0 }
+    if (!sectionRef.current) return { y: 0 };
 
-    const rect = sectionRef.current.getBoundingClientRect()
-    const sectionTop = rect.top + window.scrollY
-    const relativeScroll = scrollY - sectionTop
-    const parallaxY = relativeScroll * 0.15 // Subtle effect multiplier
+    const rect = sectionRef.current.getBoundingClientRect();
+    const sectionTop = rect.top + window.scrollY;
+    const relativeScroll = scrollY - sectionTop;
+    const parallaxY = relativeScroll * 0.15; // Subtle effect multiplier
 
-    return { y: parallaxY }
-  }
+    return { y: parallaxY };
+  };
 
-  const parallaxStyle = calculateParallax()
+  const parallaxStyle = calculateParallax();
 
   return (
-    <section ref={sectionRef} className="relative min-h-[600px] my-24 mx-4 rounded-3xl overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative min-h-[600px] my-24 mx-4 rounded-3xl overflow-hidden "
+      style={{
+        backgroundImage: `url('/images/mobile-app.png')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       {/* Phone background image with parallax */}
       <div className="absolute inset-0 z-0">
         {/* Gradient overlay - lighter on the right to show phone more clearly */}
@@ -103,11 +112,15 @@ export function ParallaxSection() {
             <br />
             You.
           </h2>
-          <p className="text-xl text-gray-300 mb-8">More than an app — a digital ecosystem.</p>
+          <p className="text-xl text-gray-300 mb-8">
+            More than an app — a digital ecosystem.
+          </p>
           <Button className="bg-white text-black hover:bg-gray-200 rounded-full px-8 py-3 text-lg">
             Open Showcase
           </Button>
-          <p className="mt-6 text-gray-400">Empowering vision through smart tech</p>
+          <p className="mt-6 text-gray-400">
+            Empowering vision through smart tech
+          </p>
         </div>
       </div>
 
@@ -127,5 +140,5 @@ export function ParallaxSection() {
         }}
       ></div>
     </section>
-  )
+  );
 }

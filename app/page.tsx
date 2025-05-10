@@ -17,7 +17,7 @@ export default function Home() {
       <header className="relative">
         <nav className="container mx-auto flex items-center justify-between py-6 px-4">
           <div className="text-2xl font-bold flex items-center">
-            <span className="text-purple-500 mr-2">M</span>ELAVERSE
+            <span className="text-purple-500 mr-1">MELAVERSE</span>
           </div>
           <div className="hidden md:flex items-center space-x-8">
             <Link
@@ -149,7 +149,7 @@ export default function Home() {
                 <div className="grid md:grid-cols-2 gap-16 items-center">
                   <div className="md:pl-16">
                     <Image
-                      src="/images/leonardo-img.jpg"
+                      src="/images/leonardo.jpg"
                       alt="AI Learning Module"
                       width={200}
                       height={100}
@@ -202,10 +202,10 @@ export default function Home() {
                   </div>
                   <div className="order-1 md:order-2 md:pl-16">
                     <Image
-                      src="/images/QClay-img.jpg"
+                      src="/images/QClay.jpg"
                       alt="Integrated Platform"
                       width={200}
-                      height={100}
+                      height={50}
                       className="rounded-xl border border-blue-900/30 w-full h-auto"
                     />
                   </div>
@@ -241,6 +241,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Designed To Move You */}
+      <ParallaxSection />
 
       {/* Our Vision Section */}
       <section className="py-24 container mx-auto px-4">
@@ -533,9 +535,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      {/* Designed To Move You */}
-      <ParallaxSection />
 
       {/* Trusted Partners Section */}
       <section className="py-16 container mx-auto px-4">
