@@ -389,6 +389,45 @@ export default function Home() {
           ))}
         </div>
       </section>
+      {/* Trusted Partners Section */}
+      <section className="py-16 container mx-auto px-4">
+        <ScrollAnimation variant="fadeUp">
+          <h2 className="text-5xl font-bold text-center mb-16">
+            Trusted Partners
+          </h2>
+        </ScrollAnimation>
+        <ScrollAnimation variant="fadeUp" delay={0.2}>
+          <InfiniteCarousel />
+        </ScrollAnimation>
+      </section>
+
+      {/* Our Work in Motion */}
+      <section className="py-24 container mx-auto px-4">
+        <ScrollAnimation variant="fadeUp">
+          <h2 className="text-5xl font-bold text-center mb-16">
+            Our Work in <span className="text-orange-500">motion</span>
+          </h2>
+        </ScrollAnimation>
+        <div className="grid md:grid-cols-2 gap-8">
+          {[1, 2, 3, 4].map((item, index) => (
+            <ScrollAnimation
+              key={item}
+              variant={index % 2 === 0 ? "fadeLeft" : "fadeRight"}
+              delay={0.1 * index}
+            >
+              <div className="rounded-xl overflow-hidden border border-gray-800">
+                <Image
+                  src="/placeholder.svg?height=300&width=600"
+                  alt={`Project ${item}`}
+                  width={600}
+                  height={300}
+                  className="w-full h-auto"
+                />
+              </div>
+            </ScrollAnimation>
+          ))}
+        </div>
+      </section>
 
       {/* Our Vision Section */}
       <section className="py-24 container mx-auto px-4">
@@ -532,46 +571,6 @@ export default function Home() {
               </p>
             </div>
           </ScrollAnimation>
-        </div>
-      </section>
-
-      {/* Trusted Partners Section */}
-      <section className="py-16 container mx-auto px-4">
-        <ScrollAnimation variant="fadeUp">
-          <h2 className="text-5xl font-bold text-center mb-16">
-            Trusted Partners
-          </h2>
-        </ScrollAnimation>
-        <ScrollAnimation variant="fadeUp" delay={0.2}>
-          <InfiniteCarousel />
-        </ScrollAnimation>
-      </section>
-
-      {/* Our Work in Motion */}
-      <section className="py-24 container mx-auto px-4">
-        <ScrollAnimation variant="fadeUp">
-          <h2 className="text-5xl font-bold text-center mb-16">
-            Our Work in <span className="text-orange-500">motion</span>
-          </h2>
-        </ScrollAnimation>
-        <div className="grid md:grid-cols-2 gap-8">
-          {[1, 2, 3, 4].map((item, index) => (
-            <ScrollAnimation
-              key={item}
-              variant={index % 2 === 0 ? "fadeLeft" : "fadeRight"}
-              delay={0.1 * index}
-            >
-              <div className="rounded-xl overflow-hidden border border-gray-800">
-                <Image
-                  src="/placeholder.svg?height=300&width=600"
-                  alt={`Project ${item}`}
-                  width={600}
-                  height={300}
-                  className="w-full h-auto"
-                />
-              </div>
-            </ScrollAnimation>
-          ))}
         </div>
       </section>
 
