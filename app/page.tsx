@@ -428,6 +428,8 @@ export default function Home() {
           ))}
         </div>
       </section>
+      {/* Product Development Section */}
+      <ProductDevelopment />
 
       {/* Our Vision Section */}
       <section className="py-24 container mx-auto px-4">
@@ -489,6 +491,37 @@ export default function Home() {
           </ScrollAnimation>
         </div>
       </section>
+      {/* Empowering Innovation Section */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <Globe />
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <ScrollAnimation variant="fadeUp">
+            <div className="flex flex-wrap justify-center mb-16">
+              <div className="mx-8 text-center">
+                <div className="text-6xl font-bold text-white mb-2">7+</div>
+                <div className="text-gray-400">Delivered Projects</div>
+              </div>
+              <div className="mx-8 text-center">
+                <div className="text-6xl font-bold text-white mb-2">5+</div>
+                <div className="text-gray-400">Happy Clients</div>
+              </div>
+            </div>
+          </ScrollAnimation>
+
+          <ScrollAnimation variant="fadeUp" delay={0.2}>
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-5xl font-bold mb-6">Empowering Innovation</h2>
+              <p className="text-xl text-gray-300">
+                We build intelligent software solutions that elevate businesses
+                and solve real-world challenges.
+              </p>
+            </div>
+          </ScrollAnimation>
+        </div>
+      </section>
 
       {/* Meet the Brains Section */}
       <section className="py-24 container mx-auto px-4">
@@ -541,41 +574,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      {/* Empowering Innovation Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <Globe />
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <ScrollAnimation variant="fadeUp">
-            <div className="flex flex-wrap justify-center mb-16">
-              <div className="mx-8 text-center">
-                <div className="text-6xl font-bold text-white mb-2">7+</div>
-                <div className="text-gray-400">Delivered Projects</div>
-              </div>
-              <div className="mx-8 text-center">
-                <div className="text-6xl font-bold text-white mb-2">5+</div>
-                <div className="text-gray-400">Happy Clients</div>
-              </div>
-            </div>
-          </ScrollAnimation>
-
-          <ScrollAnimation variant="fadeUp" delay={0.2}>
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-5xl font-bold mb-6">Empowering Innovation</h2>
-              <p className="text-xl text-gray-300">
-                We build intelligent software solutions that elevate businesses
-                and solve real-world challenges.
-              </p>
-            </div>
-          </ScrollAnimation>
-        </div>
-      </section>
-
-      {/* Product Development Section */}
-      <ProductDevelopment />
 
       {/* Call to Action Section */}
       <CallToAction />
