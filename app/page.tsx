@@ -243,152 +243,6 @@ export default function Home() {
       </section>
       {/* Designed To Move You */}
       <ParallaxSection />
-
-      {/* Our Vision Section */}
-      <section className="py-24 container mx-auto px-4">
-        <ScrollAnimation variant="fadeUp">
-          <h2 className="text-5xl font-bold text-center mb-16">Our Vision</h2>
-        </ScrollAnimation>
-        <div className="grid md:grid-cols-3 gap-8">
-          <ScrollAnimation variant="fadeLeft" delay={0.1}>
-            <div className="bg-gradient-to-br from-purple-900 to-purple-950 p-8 rounded-3xl transform rotate-[-3deg] hover:rotate-0 transition-transform duration-300">
-              <h3 className="text-2xl font-bold mb-4">
-                Empower Through Technology
-              </h3>
-              <p className="text-gray-300 mb-8">
-                We aim to simplify complex challenges through tailored software
-                solutions. Whether you&apos;re a startup or an enterprise, we
-                help you move faster, work smarter, and stay ahead of the curve.
-              </p>
-              <Link
-                href="#"
-                className="text-purple-400 flex items-center group"
-              >
-                Learn More{" "}
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          </ScrollAnimation>
-
-          <ScrollAnimation variant="fadeUp" delay={0.2}>
-            <div className="bg-gradient-to-br from-teal-900 to-teal-950 p-8 rounded-3xl transform hover:rotate-0 transition-transform duration-300">
-              <h3 className="text-2xl font-bold mb-4">Build What Matters</h3>
-              <p className="text-gray-300 mb-8">
-                We focus on solutions that are both scalable and impactful, with
-                purpose-driven design at the core. You get reliable digital
-                tools that solve real problems, improve productivity, and
-                elevate your brand.
-              </p>
-              <Link href="#" className="text-teal-400 flex items-center group">
-                Learn More{" "}
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          </ScrollAnimation>
-
-          <ScrollAnimation variant="fadeRight" delay={0.3}>
-            <div className="bg-gradient-to-br from-amber-900 to-amber-950 p-8 rounded-3xl transform rotate-[3deg] hover:rotate-0 transition-transform duration-300">
-              <h3 className="text-2xl font-bold mb-4">
-                Global Impact, Local Focus
-              </h3>
-              <p className="text-gray-300 mb-8">
-                We blend world-class technologies with deep understanding of
-                local needs. Your business gets future-ready services built with
-                insight, care, and market-fit from day one.
-              </p>
-              <Link href="#" className="text-amber-400 flex items-center group">
-                Learn More{" "}
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          </ScrollAnimation>
-        </div>
-      </section>
-
-      {/* Meet the Brains Section */}
-      <section className="py-24 container mx-auto px-4">
-        <ScrollAnimation variant="fadeUp">
-          <h2 className="text-5xl font-bold text-center mb-16">
-            Meet the Brains
-          </h2>
-        </ScrollAnimation>
-        <div className="grid md:grid-cols-4 gap-6">
-          {[
-            {
-              name: "Hayatuden Jemal",
-              role: "CEO and Founder",
-              image: "/placeholder.svg?height=300&width=300",
-            },
-            {
-              name: "Mubarek Hassen",
-              role: "CTO and Co-founder",
-              image: "/placeholder.svg?height=300&width=300",
-            },
-            {
-              name: "Esayas Tesfaye",
-              role: "Project manager and Co-founder",
-              image: "/placeholder.svg?height=300&width=300",
-            },
-            {
-              name: "Orhan Osman",
-              role: "Marketing manager",
-              image: "/placeholder.svg?height=300&width=300",
-            },
-          ].map((member, index) => (
-            <ScrollAnimation key={index} variant="fadeUp" delay={0.1 * index}>
-              <div className="relative group">
-                <div className="absolute inset-0 bg-blue-600 transform skew-x-12 -z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="bg-gray-900 overflow-hidden">
-                  <Image
-                    src={member.image || "/placeholder.svg"}
-                    alt={member.name}
-                    width={300}
-                    height={300}
-                    className="w-full h-auto"
-                  />
-                </div>
-                <div className="pt-4 pb-6">
-                  <h3 className="text-xl font-bold">{member.name}</h3>
-                  <p className="text-amber-500">{member.role}</p>
-                </div>
-              </div>
-            </ScrollAnimation>
-          ))}
-        </div>
-      </section>
-
-      {/* Empowering Innovation Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <Globe />
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <ScrollAnimation variant="fadeUp">
-            <div className="flex flex-wrap justify-center mb-16">
-              <div className="mx-8 text-center">
-                <div className="text-6xl font-bold text-white mb-2">7+</div>
-                <div className="text-gray-400">Delivered Projects</div>
-              </div>
-              <div className="mx-8 text-center">
-                <div className="text-6xl font-bold text-white mb-2">5+</div>
-                <div className="text-gray-400">Happy Clients</div>
-              </div>
-            </div>
-          </ScrollAnimation>
-
-          <ScrollAnimation variant="fadeUp" delay={0.2}>
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-5xl font-bold mb-6">Empowering Innovation</h2>
-              <p className="text-xl text-gray-300">
-                We build intelligent software solutions that elevate businesses
-                and solve real-world challenges.
-              </p>
-            </div>
-          </ScrollAnimation>
-        </div>
-      </section>
-
       {/* Tech Stack and Services */}
       <section className="py-24 container mx-auto px-4">
         <ScrollAnimation variant="fadeUp">
@@ -533,6 +387,151 @@ export default function Home() {
               </div>
             </ScrollAnimation>
           ))}
+        </div>
+      </section>
+
+      {/* Our Vision Section */}
+      <section className="py-24 container mx-auto px-4">
+        <ScrollAnimation variant="fadeUp">
+          <h2 className="text-5xl font-bold text-center mb-16">Our Vision</h2>
+        </ScrollAnimation>
+        <div className="grid md:grid-cols-3 gap-8">
+          <ScrollAnimation variant="fadeLeft" delay={0.1}>
+            <div className="bg-gradient-to-br from-purple-900 to-purple-950 p-8 rounded-3xl transform rotate-[-3deg] hover:rotate-0 transition-transform duration-300">
+              <h3 className="text-2xl font-bold mb-4">
+                Empower Through Technology
+              </h3>
+              <p className="text-gray-300 mb-8">
+                We aim to simplify complex challenges through tailored software
+                solutions. Whether you&apos;re a startup or an enterprise, we
+                help you move faster, work smarter, and stay ahead of the curve.
+              </p>
+              <Link
+                href="#"
+                className="text-purple-400 flex items-center group"
+              >
+                Learn More{" "}
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </ScrollAnimation>
+
+          <ScrollAnimation variant="fadeUp" delay={0.2}>
+            <div className="bg-gradient-to-br from-teal-900 to-teal-950 p-8 rounded-3xl transform hover:rotate-0 transition-transform duration-300">
+              <h3 className="text-2xl font-bold mb-4">Build What Matters</h3>
+              <p className="text-gray-300 mb-8">
+                We focus on solutions that are both scalable and impactful, with
+                purpose-driven design at the core. You get reliable digital
+                tools that solve real problems, improve productivity, and
+                elevate your brand.
+              </p>
+              <Link href="#" className="text-teal-400 flex items-center group">
+                Learn More{" "}
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </ScrollAnimation>
+
+          <ScrollAnimation variant="fadeRight" delay={0.3}>
+            <div className="bg-gradient-to-br from-amber-900 to-amber-950 p-8 rounded-3xl transform rotate-[3deg] hover:rotate-0 transition-transform duration-300">
+              <h3 className="text-2xl font-bold mb-4">
+                Global Impact, Local Focus
+              </h3>
+              <p className="text-gray-300 mb-8">
+                We blend world-class technologies with deep understanding of
+                local needs. Your business gets future-ready services built with
+                insight, care, and market-fit from day one.
+              </p>
+              <Link href="#" className="text-amber-400 flex items-center group">
+                Learn More{" "}
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </ScrollAnimation>
+        </div>
+      </section>
+
+      {/* Meet the Brains Section */}
+      <section className="py-24 container mx-auto px-4">
+        <ScrollAnimation variant="fadeUp">
+          <h2 className="text-5xl font-bold text-center mb-16">
+            Meet the Brains
+          </h2>
+        </ScrollAnimation>
+        <div className="grid md:grid-cols-4 gap-6">
+          {[
+            {
+              name: "Hayatuden Jemal",
+              role: "CEO and Founder",
+              image: "/placeholder.svg?height=300&width=300",
+            },
+            {
+              name: "Mubarek Hassen",
+              role: "CTO and Co-founder",
+              image: "/placeholder.svg?height=300&width=300",
+            },
+            {
+              name: "Esayas Tesfaye",
+              role: "Project manager and Co-founder",
+              image: "/placeholder.svg?height=300&width=300",
+            },
+            {
+              name: "Orhan Osman",
+              role: "Marketing manager",
+              image: "/placeholder.svg?height=300&width=300",
+            },
+          ].map((member, index) => (
+            <ScrollAnimation key={index} variant="fadeUp" delay={0.1 * index}>
+              <div className="relative group">
+                <div className="absolute inset-0 bg-blue-600 transform skew-x-12 -z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="bg-gray-900 overflow-hidden">
+                  <Image
+                    src={member.image || "/placeholder.svg"}
+                    alt={member.name}
+                    width={300}
+                    height={300}
+                    className="w-full h-auto"
+                  />
+                </div>
+                <div className="pt-4 pb-6">
+                  <h3 className="text-xl font-bold">{member.name}</h3>
+                  <p className="text-amber-500">{member.role}</p>
+                </div>
+              </div>
+            </ScrollAnimation>
+          ))}
+        </div>
+      </section>
+
+      {/* Empowering Innovation Section */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <Globe />
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <ScrollAnimation variant="fadeUp">
+            <div className="flex flex-wrap justify-center mb-16">
+              <div className="mx-8 text-center">
+                <div className="text-6xl font-bold text-white mb-2">7+</div>
+                <div className="text-gray-400">Delivered Projects</div>
+              </div>
+              <div className="mx-8 text-center">
+                <div className="text-6xl font-bold text-white mb-2">5+</div>
+                <div className="text-gray-400">Happy Clients</div>
+              </div>
+            </div>
+          </ScrollAnimation>
+
+          <ScrollAnimation variant="fadeUp" delay={0.2}>
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-5xl font-bold mb-6">Empowering Innovation</h2>
+              <p className="text-xl text-gray-300">
+                We build intelligent software solutions that elevate businesses
+                and solve real-world challenges.
+              </p>
+            </div>
+          </ScrollAnimation>
         </div>
       </section>
 
