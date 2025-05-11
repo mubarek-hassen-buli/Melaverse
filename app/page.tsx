@@ -11,6 +11,7 @@ import { CallToAction } from "@/components/call-to-action";
 import { ProductDevelopment } from "@/components/product-development";
 import { Footer } from "@/components/footer";
 import { Globe } from "@/components/magicui/globe";
+import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import { AnimatedTestimonialsDemo } from "@/components/Testimonials";
 export default function Home() {
   return (
@@ -56,9 +57,7 @@ export default function Home() {
           <FloatingNav navItems={navItems} />
 
           <div className="flex items-center space-x-4">
-            <Button className="bg-white text-black hover:bg-gray-200">
-              Connect now
-            </Button>
+            <InteractiveHoverButton>Connect now</InteractiveHoverButton>
           </div>
         </nav>
 
