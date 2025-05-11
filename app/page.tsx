@@ -3,13 +3,15 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ParallaxSection } from "@/components/parallax-section";
-
+import { FloatingNav } from "@/components/ui/floating-navbar";
+import { navItems } from "@/lib/data";
 import { ScrollAnimation } from "@/components/scroll-animation";
 import { InfiniteCarousel } from "@/components/infinite-carousel";
 import { CallToAction } from "@/components/call-to-action";
 import { ProductDevelopment } from "@/components/product-development";
 import { Footer } from "@/components/footer";
 import { Globe } from "@/components/magicui/globe";
+import { AnimatedTestimonialsDemo } from "@/components/Testimonials";
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#050714] text-white">
@@ -19,7 +21,7 @@ export default function Home() {
           <div className="text-2xl font-bold flex items-center">
             <span className="text-purple-500 mr-1">MELAVERSE</span>
           </div>
-          <div className="hidden md:flex items-center space-x-8">
+          {/* <div className="hidden md:flex items-center space-x-8">
             <Link
               href="#why"
               className="hover:text-purple-400 transition-colors"
@@ -50,14 +52,10 @@ export default function Home() {
             >
               Visions
             </Link>
-          </div>
+          </div> */}
+          <FloatingNav navItems={navItems} />
+
           <div className="flex items-center space-x-4">
-            <Button
-              variant="ghost"
-              className="text-white hover:text-purple-400"
-            >
-              Login
-            </Button>
             <Button className="bg-white text-black hover:bg-gray-200">
               Connect now
             </Button>
@@ -417,7 +415,7 @@ export default function Home() {
             >
               <div className="rounded-xl overflow-hidden border border-gray-800">
                 <Image
-                  src="/placeholder.svg?height=300&width=600"
+                  src={`/images/project-${item}.png`}
                   alt={`Project ${item}`}
                   width={600}
                   height={300}
@@ -428,6 +426,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+      <AnimatedTestimonialsDemo />
       {/* Product Development Section */}
       <ProductDevelopment />
 

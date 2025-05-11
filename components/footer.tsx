@@ -10,7 +10,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div className="md:col-span-1">
             <div className="text-2xl font-bold flex items-center mb-4">
-              <span className="text-purple-500 mr-2">M</span>ELAVERSE
+              <span className="text-purple-500 mr-2">MELAVERSE</span>
             </div>
             <p className="text-gray-400 mb-4">
               Turning futuristic concepts into working platforms. We build
