@@ -180,7 +180,7 @@ export default function Home() {
                 <div className="absolute left-1/2 top-1/2 w-6 h-6 bg-blue-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-10"></div>
                 <div className="grid md:grid-cols-2 gap-16 items-center">
                   <div className="md:text-right order-2 md:order-1 md:pr-16">
-                    <div className="absolute top-0 left-7 -mt-6 mr-2 md:mr-16">
+                    <div className="absolute top-0.5 right-[800] -mt-6 mr-2 md:mr-16">
                       <Image
                         src="/images/ui-ux-01.png"
                         alt="Automation Engine"
@@ -224,6 +224,15 @@ export default function Home() {
                     />
                   </div>
                   <div className="md:pr-16 mt-6 md:mt-0">
+                    <div className="absolute top-0  mr-2 md:mr-16">
+                      <Image
+                        src="/images/Mask-group-2.png"
+                        alt="Automation Engine"
+                        width={40}
+                        height={40}
+                        className="rounded-xl border border-purple-900/30"
+                      />
+                    </div>
                     <h3 className="text-3xl font-bold mb-4">
                       Digital Transformation
                     </h3>

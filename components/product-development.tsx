@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { motion } from "framer-motion"
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 export function ProductDevelopment() {
   return (
@@ -34,7 +34,9 @@ export function ProductDevelopment() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white">End-to-End Product Development</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white">
+            End-to-End Product Development
+          </h2>
         </motion.div>
 
         {/* Computer image with text overlay */}
@@ -55,12 +57,19 @@ export function ProductDevelopment() {
             />
 
             {/* Text overlay in the center of the computer screen */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-[55%] mt-[-5%]">
-              <p className="text-white text-lg md:text-xl font-medium">
-                From UI/UX to full-stack engineering, we&apos;ve got your digital product covered.
+            <div className="absolute top-[35%] sm:top-[38%] md:top-[40%] left-1/2 transform -translate-x-1/2 text-center w-[60%] sm:w-[50%] md:w-[40%] lg:w-[35%]">
+              <p className="text-white text-xs sm:text-sm md:text-sm font-medium px-2">
+                From UI/UX to full-stack engineering, we&apos;ve got your
+                digital product covered.
               </p>
-              <motion.div className="mt-6" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button className="bg-white text-black hover:bg-gray-200 px-6 py-2 rounded-full">Connect now</Button>
+              <motion.div
+                className="mt-3 sm:mt-4 md:mt-6"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button className="bg-white text-black hover:bg-gray-200 px-4 sm:px-5 md:px-6 py-1 sm:py-1.5 md:py-2 text-xs sm:text-sm rounded-full">
+                  Connect now
+                </Button>
               </motion.div>
             </div>
           </motion.div>
@@ -71,5 +80,5 @@ export function ProductDevelopment() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,44 +1,59 @@
-"use client"
-import Image from "next/image"
-import { motion } from "framer-motion"
+"use client";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface Partner {
-  name: string
-  logo: string
+  name: string;
+  logo: string;
 }
 
 export function InfiniteCarousel() {
   // Sample partner logos - replace with actual partner logos
   const partners: Partner[] = [
-    { name: "Partner 1", logo: "/placeholder.svg?height=60&width=180" },
-    { name: "Partner 2", logo: "/placeholder.svg?height=60&width=180" },
-    { name: "Partner 3", logo: "/placeholder.svg?height=60&width=180" },
-    { name: "Partner 4", logo: "/placeholder.svg?height=60&width=180" },
-    { name: "Partner 5", logo: "/placeholder.svg?height=60&width=180" },
-    { name: "Partner 6", logo: "/placeholder.svg?height=60&width=180" },
-    { name: "Partner 7", logo: "/placeholder.svg?height=60&width=180" },
-    { name: "Partner 8", logo: "/placeholder.svg?height=60&width=180" },
-    { name: "Partner 9", logo: "/placeholder.svg?height=60&width=180" },
-    { name: "Partner 10", logo: "/placeholder.svg?height=60&width=180" },
-  ]
+    { name: "Partner 1", logo: "/images/logo-01.png" },
+    { name: "Partner 2", logo: "/images/logo-02.png" },
+    { name: "Partner 3", logo: "/images/logo-03.png" },
+    { name: "Partner 4", logo: "/images/logo-04.png" },
+    { name: "Partner 5", logo: "/images/logo-01.png" },
+    { name: "Partner 6", logo: "/images/logo-02.png" },
+  ];
 
-  // Duplicate the partners array to create a seamless loop
-  const duplicatedPartners = [...partners, ...partners]
+  // Create a double array to ensure seamless infinite loop
+  const duplicatedPartners = [...partners, ...partners];
 
   // Animation duration based on the number of partners
-  const duration = partners.length * 10 // seconds
+  const duration = partners.length * 8; // seconds
 
   return (
-    <div className="w-full overflow-hidden bg-gradient-to-r from-blue-900/10 via-purple-900/10 to-blue-900/10 py-12 rounded-xl">
+    <div className="w-full overflow-hidden py-12">
       <div className="mb-8 text-center">
-        <h3 className="text-2xl font-semibold text-white">Trusted by Industry Leaders</h3>
-        <p className="text-gray-400 mt-2">Partnering with the best to deliver excellence</p>
+        <h3 className="text-2xl font-semibold text-white bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+          Trusted by Industry Leaders
+        </h3>
+        <p className="text-gray-400 mt-2">
+          Partnering with the best to deliver excellence
+        </p>
       </div>
 
-      <div className="relative">
-        {/* First row - moves left to right */}
+      <div className="relative py-6">
+        {/* Single row with futuristic design */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/0 via-blue-500/5 to-blue-900/0 h-full w-full"></div>
+
+        {/* Animated glow line */}
+        <div className="absolute h-px w-full top-1/2 transform -translate-y-1/2 overflow-hidden">
+          <motion.div
+            className="h-px w-[50%] bg-gradient-to-r from-blue-500/0 via-blue-500/80 to-blue-500/0"
+            animate={{ x: ["-100%", "200%"] }}
+            transition={{
+              duration: 8,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "linear",
+            }}
+          />
+        </div>
+
         <motion.div
-          className="flex items-center space-x-16 mb-8"
+          className="flex items-center space-x-12"
           animate={{
             x: ["0%", "-50%"],
           }}
@@ -51,49 +66,30 @@ export function InfiniteCarousel() {
           }}
         >
           {duplicatedPartners.map((partner, index) => (
-            <div key={`row1-${index}`} className="flex-shrink-0 px-4">
-              <div className="bg-[#0a0d1a] p-4 rounded-lg h-20 w-44 flex items-center justify-center border border-blue-900/30 hover:border-blue-500/50 transition-colors">
-                <Image
-                  src={partner.logo || "/placeholder.svg"}
-                  alt={partner.name}
-                  width={120}
-                  height={40}
-                  className="max-h-12 w-auto opacity-70 hover:opacity-100 transition-opacity"
-                />
-              </div>
-            </div>
-          ))}
-        </motion.div>
+            <motion.div
+              key={`partner-${index}`}
+              className="flex-shrink-0 px-4"
+              whileHover={{ y: -5, scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              <div className="relative group">
+                {/* Glow effect */}
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-50 blur-md transition duration-300"></div>
 
-        {/* Second row - moves right to left (opposite direction) */}
-        <motion.div
-          className="flex items-center space-x-16"
-          animate={{
-            x: ["-50%", "0%"],
-          }}
-          transition={{
-            x: {
-              duration: duration * 1.2, // Slightly different speed for visual interest
-              ease: "linear",
-              repeat: Number.POSITIVE_INFINITY,
-            },
-          }}
-        >
-          {duplicatedPartners.map((partner, index) => (
-            <div key={`row2-${index}`} className="flex-shrink-0 px-4">
-              <div className="bg-[#0a0d1a] p-4 rounded-lg h-20 w-44 flex items-center justify-center border border-blue-900/30 hover:border-blue-500/50 transition-colors">
-                <Image
-                  src={partner.logo || "/placeholder.svg"}
-                  alt={partner.name}
-                  width={120}
-                  height={40}
-                  className="max-h-12 w-auto opacity-70 hover:opacity-100 transition-opacity"
-                />
+                <div className="relative bg-transparent p-4 h-20 w-44 flex items-center justify-center transition-all duration-300 backdrop-blur-sm">
+                  <Image
+                    src={partner.logo || "/placeholder.svg"}
+                    alt={partner.name}
+                    width={120}
+                    height={40}
+                    className="max-h-12 w-auto opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                  />
+                </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </motion.div>
       </div>
     </div>
-  )
+  );
 }

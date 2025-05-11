@@ -103,7 +103,7 @@ export function ParallaxSection() {
       </div>
 
       {/* Content - now aligned to the left */}
-      <div className="container mx-auto px-4 py-24 relative z-20">
+      <div className="container mx-auto px-56 py-24 relative z-20">
         <div className="max-w-xl ml-0 mr-auto text-left">
           <h2 className="text-5xl font-bold mb-6">
             Designed
