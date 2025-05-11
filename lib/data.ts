@@ -2,27 +2,27 @@
 export const navItems = [
   {
     name: "why Melaverse",
-    link: "/why-melaverse",
+    link: "#why-melaverse",
     // icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
   },
   {
-    name: "solutions",
-    link: "/solutions",
+    name: "services",
+    link: "#services",
     // icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
   },
   {
     name: "About",
-    link: "/contact",
+    link: "#about",
     // icon: <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />,
   },
   {
     name: "project",
-    link: "/project",
+    link: "#project",
     // icon: <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />,
   },
   {
     name: "vision",
-    link: "/vision",
+    link: "#vision",
     // icon: <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />,
   },
 ];

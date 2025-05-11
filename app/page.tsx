@@ -13,6 +13,7 @@ import { Footer } from "@/components/footer";
 import { Globe } from "@/components/magicui/globe";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import { AnimatedTestimonialsDemo } from "@/components/Testimonials";
+import Approach from "@/components/Approachs";
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#050714] text-white">
@@ -95,7 +96,10 @@ export default function Home() {
         </ScrollAnimation>
       </header>
       {/* Our Core Continuum */}
-      <section className="py-24 container mx-auto px-4" id="core-continuum">
+      <section
+        className="py-24 container mx-auto px-4 scroll-mt-20"
+        id="core-continuum"
+      >
         <ScrollAnimation variant="fadeUp">
           <h2 className="text-5xl font-bold text-center mb-16">
             Our Core Continuum
@@ -250,7 +254,10 @@ export default function Home() {
       {/* Designed To Move You */}
       <ParallaxSection />
       {/* Tech Stack and Services */}
-      <section className="py-24 container mx-auto px-4">
+      <section
+        className="py-24 container mx-auto px-4 scroll-mt-20"
+        id="services"
+      >
         <ScrollAnimation variant="fadeUp">
           <h2 className="text-5xl font-bold text-center mb-16">
             Tech stack and services
@@ -267,7 +274,7 @@ export default function Home() {
                 "E-commerce Platforms",
                 "Landing Pages",
               ],
-              dot: "bg-red-600",
+              // dot: "bg-red-600",
               gradient: "from-blue-900/40 to-blue-600/5",
             },
             {
@@ -279,7 +286,7 @@ export default function Home() {
                 "UI/UX Mobile Design",
                 "App Maintenance & Updates",
               ],
-              dot: "bg-blue-600",
+              // dot: "bg-blue-600",
               gradient: "from-blue-800/40 to-blue-500/5",
             },
             {
@@ -291,7 +298,7 @@ export default function Home() {
                 "High-Fidelity Prototyping",
                 "Mobile & Web Interface Design",
               ],
-              dot: "bg-amber-600",
+              // dot: "bg-amber-600",
               gradient: "from-blue-700/40 to-blue-400/5",
             },
             {
@@ -303,7 +310,7 @@ export default function Home() {
                 "Cultural Adaptation",
                 "SEO for International Markets",
               ],
-              dot: "bg-teal-600",
+              // dot: "bg-teal-600",
               gradient: "from-blue-900/40 to-blue-600/5",
             },
             {
@@ -315,7 +322,7 @@ export default function Home() {
                 "Subscription Management",
                 "User Analytics",
               ],
-              dot: "bg-gray-600",
+              // dot: "bg-gray-600",
               gradient: "from-blue-800/40 to-blue-500/5",
             },
             {
@@ -327,7 +334,7 @@ export default function Home() {
                 "Product Demonstrations",
                 "Social Media Content",
               ],
-              dot: "bg-purple-600",
+              // dot: "bg-purple-600",
               gradient: "from-blue-700/40 to-blue-400/5",
             },
           ].map((service, index) => (
@@ -338,29 +345,32 @@ export default function Home() {
               once={true}
             >
               <div
-                className={`p-8 rounded-3xl border border-blue-900/50 relative overflow-hidden bg-gradient-to-b ${service.gradient} hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300`}
+                className={`p-8 rounded-3xl border border-blue-900/50 relative overflow-hidden bg-gradient-to-b ${service.gradient} hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 group`}
               >
                 <div
-                  className={`absolute top-0 left-10 w-8 h-8 ${service.dot} rounded-full -translate-y-1/2 z-10`}
+                  className="absolute inset-0 z-0 opacity-30 transition-opacity duration-500 group-hover:opacity-50"
+                  style={{
+                    backgroundImage: `url("/images/wave-bg.png")`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center bottom",
+                    backgroundRepeat: "no-repeat",
+                    transform: "translateY(10%)",
+                    transition: "transform 0.5s ease-out",
+                  }}
+                ></div>
+                <div
+                  className={`absolute -top-4 left-10 w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 opacity-75 blur-lg group-hover:opacity-100 transition-all duration-500`}
                 ></div>
 
-                {/* Wave pattern created with CSS */}
-                <div className="absolute bottom-0 left-0 right-0 h-24 opacity-40">
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600/30 via-blue-400/40 to-blue-600/30"></div>
-                  <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-blue-500/20 to-transparent"></div>
-                  <div className="absolute bottom-4 left-0 right-0 h-1 bg-blue-500/40 rounded-full"></div>
-                  <div className="absolute bottom-8 left-0 right-0 h-1 bg-blue-400/30 rounded-full transform translate-x-4"></div>
-                  <div className="absolute bottom-12 left-0 right-0 h-1 bg-blue-300/20 rounded-full transform -translate-x-4"></div>
-                </div>
-
                 <div className="relative z-10">
-                  <div className="mb-6 text-blue-400">
+                  <div className="mb-6 text-blue-400 transform group-hover:scale-110 transition-transform duration-300">
                     <svg
                       width="40"
                       height="40"
                       viewBox="0 0 24 24"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
+                      className="group-hover:text-blue-300 transition-colors duration-300"
                     >
                       <rect
                         width="24"
@@ -368,24 +378,33 @@ export default function Home() {
                         rx="4"
                         fill="currentColor"
                         fillOpacity="0.2"
+                        className="group-hover:fill-opacity-30 transition-all duration-300"
                       />
                       <path
                         d="M12 8v8m-4-4h8"
                         stroke="currentColor"
                         strokeWidth="2"
                         strokeLinecap="round"
+                        className="group-hover:stroke-blue-300 transition-colors duration-300"
                       />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                  <p className="text-gray-300 mb-8 text-sm">
+                  <h3 className="text-2xl font-bold mb-4 group-hover:text-blue-300 transition-colors duration-300">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-300 mb-8 text-sm group-hover:text-gray-200 transition-colors duration-300">
                     {service.description}
                   </p>
-                  <div className="space-y-2">
+                  <div className="space-y-3">
                     {service.features.map((feature, i) => (
-                      <div key={i} className="flex items-center">
-                        <CheckCircle2 className="h-5 w-5 text-blue-500 mr-2" />
-                        <span className="text-sm">{feature}</span>
+                      <div
+                        key={i}
+                        className="flex items-center group/item hover:translate-x-2 transition-transform duration-300"
+                      >
+                        <CheckCircle2 className="h-5 w-5 text-blue-500 mr-2 group-hover/item:text-blue-400 transition-colors duration-300" />
+                        <span className="text-sm group-hover/item:text-blue-300 transition-colors duration-300">
+                          {feature}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -408,7 +427,10 @@ export default function Home() {
       </section>
 
       {/* Our Work in Motion */}
-      <section className="py-24 container mx-auto px-4">
+      <section
+        className="py-24 container mx-auto px-4 scroll-mt-20"
+        id="project"
+      >
         <ScrollAnimation variant="fadeUp">
           <h2 className="text-5xl font-bold text-center mb-16">
             Our Work in <span className="text-orange-500">motion</span>
@@ -437,9 +459,15 @@ export default function Home() {
       <AnimatedTestimonialsDemo />
       {/* Product Development Section */}
       <ProductDevelopment />
+      <section className="mx-auto text-center" id="why-melaverse">
+        <Approach />
+      </section>
 
       {/* Our Vision Section */}
-      <section className="py-24 container mx-auto px-4">
+      <section
+        className="py-24 container mx-auto px-4 scroll-mt-20"
+        id="vision"
+      >
         <ScrollAnimation variant="fadeUp">
           <h2 className="text-5xl font-bold text-center mb-16">Our Vision</h2>
         </ScrollAnimation>
@@ -499,7 +527,7 @@ export default function Home() {
         </div>
       </section>
       {/* Empowering Innovation Section */}
-      <section className="py-24 relative overflow-hidden">
+      <section className="py-24 relative overflow-hidden" id="#why-melaverse">
         <div className="absolute inset-0 flex items-center justify-center">
           <Globe />
         </div>
