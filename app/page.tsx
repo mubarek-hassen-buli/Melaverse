@@ -276,6 +276,7 @@ export default function Home() {
               ],
               // dot: "bg-red-600",
               gradient: "from-blue-900/40 to-blue-600/5",
+              image: "/images/website-icon.png",
             },
             {
               title: "Mobile App Development",
@@ -288,6 +289,7 @@ export default function Home() {
               ],
               // dot: "bg-blue-600",
               gradient: "from-blue-800/40 to-blue-500/5",
+              image: "/images/app-icon.png",
             },
             {
               title: "UI UX design",
@@ -300,6 +302,7 @@ export default function Home() {
               ],
               // dot: "bg-amber-600",
               gradient: "from-blue-700/40 to-blue-400/5",
+              image: "/images/ui-icon.png",
             },
             {
               title: "Website translation integration",
@@ -312,6 +315,7 @@ export default function Home() {
               ],
               // dot: "bg-teal-600",
               gradient: "from-blue-900/40 to-blue-600/5",
+              image: "/images/web-translation-icon.png",
             },
             {
               title: "SAAS platform Development",
@@ -324,6 +328,7 @@ export default function Home() {
               ],
               // dot: "bg-gray-600",
               gradient: "from-blue-800/40 to-blue-500/5",
+              image: "/images/SAAS-icon.png",
             },
             {
               title: "Content Creation and Video Editing",
@@ -336,6 +341,7 @@ export default function Home() {
               ],
               // dot: "bg-purple-600",
               gradient: "from-blue-700/40 to-blue-400/5",
+              image: "/images/Content-icon.png",
             },
           ].map((service, index) => (
             <ScrollAnimation
@@ -363,31 +369,14 @@ export default function Home() {
                 ></div>
 
                 <div className="relative z-10">
-                  <div className="mb-6 text-blue-400 transform group-hover:scale-110 transition-transform duration-300">
-                    <svg
-                      width="40"
-                      height="40"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="group-hover:text-blue-300 transition-colors duration-300"
-                    >
-                      <rect
-                        width="24"
-                        height="24"
-                        rx="4"
-                        fill="currentColor"
-                        fillOpacity="0.2"
-                        className="group-hover:fill-opacity-30 transition-all duration-300"
-                      />
-                      <path
-                        d="M12 8v8m-4-4h8"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        className="group-hover:stroke-blue-300 transition-colors duration-300"
-                      />
-                    </svg>
+                  <div className="mb-6  transform group-hover:scale-110 transition-transform duration-300 ">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      width={40}
+                      height={40}
+                      // className=""
+                    />
                   </div>
                   <h3 className="text-2xl font-bold mb-4 group-hover:text-blue-300 transition-colors duration-300">
                     {service.title}
