@@ -44,17 +44,18 @@ const CloseIcon = () => (
   </svg>
 );
 
-export const FloatingNav = ({
-  navItems,
-  className,
-}: {
-  navItems: {
-    name: string;
-    link: string;
-    icon?: JSX.Element;
-  }[];
+interface NavItem {
+  name: string;
+  link: string;
+  icon?: JSX.Element;
+}
+
+interface FloatingNavProps {
+  navItems: NavItem[];
   className?: string;
-}) => {
+}
+
+export const FloatingNav = ({ navItems, className }: FloatingNavProps) => {
   const { scrollYProgress } = useScroll();
   const [visible, setVisible] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
