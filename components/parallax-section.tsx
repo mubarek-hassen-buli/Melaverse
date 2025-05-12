@@ -1,144 +1,53 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 export function ParallaxSection() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (sectionRef.current) {
-        const rect = sectionRef.current.getBoundingClientRect();
-        // Only update when section is visible
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-          setScrollY(window.scrollY);
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    // Initial calculation
-    handleScroll();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  // Calculate parallax offset - subtle movement
-  const calculateParallax = () => {
-    if (!sectionRef.current) return { y: 0 };
-
-    const rect = sectionRef.current.getBoundingClientRect();
-    const sectionTop = rect.top + window.scrollY;
-    const relativeScroll = scrollY - sectionTop;
-    const parallaxY = relativeScroll * 0.15; // Subtle effect multiplier
-
-    return { y: parallaxY };
-  };
-
-  const parallaxStyle = calculateParallax();
-
   return (
-    <section
-      ref={sectionRef}
-      className="relative min-h-[600px] my-24 mx-4 rounded-3xl overflow-hidden "
-      style={{
-        backgroundImage: `url('/images/mobile-app.png')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      {/* Phone background image with parallax */}
-      <div className="absolute inset-0 z-0">
-        {/* Gradient overlay - lighter on the right to show phone more clearly */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050714]/95 via-[#050714]/80 to-[#050714]/40 z-10"></div>
-
-        <div
-          className="absolute inset-0 flex items-center justify-end"
-          style={{
-            transform: `translateY(${parallaxStyle.y}px)`,
-            transition: "transform 0.1s ease-out",
-          }}
-        >
-          <Image
-            src="/images/mobile-app.png"
-            alt="Mobile App Interface"
-            width={1200}
-            height={800}
-            className="h-full object-contain object-right opacity-90"
-            style={{
-              objectPosition: "right center",
-              maxWidth: "none",
-              width: "auto",
-            }}
-          />
-        </div>
-
-        {/* Additional decorative elements */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050714] via-transparent to-[#050714]/80"></div>
-
-        {/* Grid overlay */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGZpbGw9IiMxQjI0NEEiIGZpbGwtb3BhY2l0eT0iMC4wMiIgZD0iTTM2IDM0aDR2MWgtNHYtMXptMC0yaDF2NGgtMXYtNHptMi0yaDF2MWgtMXYtMXptLTIgMGgxdjFoLTF2LTF6bS0yLTJoMXYxaC0xdi0xem0yIDBIMzZ2MWgtMXYtMXptLTIgNGgxdjFoLTF2LTF6bTIgMGgxdjFoLTF2LTF6Ii8+PC9nPjwvc3ZnPg==')] opacity-10"></div>
-
-        {/* Glowing elements that move slightly differently than the background */}
-        <div
-          className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl"
-          style={{
-            transform: `translateY(${parallaxStyle.y * 0.7}px)`,
-            transition: "transform 0.1s ease-out",
-          }}
-        ></div>
-        <div
-          className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl"
-          style={{
-            transform: `translateY(${parallaxStyle.y * 0.5}px)`,
-            transition: "transform 0.1s ease-out",
-          }}
-        ></div>
+    <section className="relative min-h-[600px] my-12 md:my-24 mx-auto max-w-6xl rounded-3xl overflow-hidden bg-[#050714] p-8 md:p-16 flex items-center">
+      {/* Background Image and Overlay */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <Image
+          src="/images/mobile-app.png"
+          alt="Mobile App Background"
+          fill
+          className="object-cover opacity-20"
+          priority
+        />
+        {/* <div className="absolute inset-0 bg-gradient-to-r from-[#050714] via-[#050714]/90 to-[#050714]/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050714] via-transparent to-[#050714]"></div> */}
       </div>
 
-      {/* Content - now aligned to the left */}
-      <div className="container mx-auto px-8 py-24 relative z-20">
-        <div className="max-w-xl ml-0 mr-auto text-left">
-          <h2 className="text-5xl font-bold mb-6">
+      <div className="container mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
+        {/* Left content */}
+        <div className="max-w-md text-left text-white md:w-1/2">
+          <h2 className="text-6xl md:text-7xl font-bold mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-white">
             Designed
             <br />
             To Move
             <br />
             You.
           </h2>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-lg md:text-xl text-blue-100/90 mb-8 font-light">
             More than an app — a digital ecosystem.
           </p>
-          <Button className="bg-white text-black hover:bg-gray-200 rounded-full px-8 py-3 text-lg">
+          <Button
+            variant="outline"
+            className="bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600 border-0 rounded-full px-8 py-3 text-lg font-medium shadow-lg transition-all hover:scale-105 hover:shadow-blue-500/25"
+          >
             Open Showcase
           </Button>
-          <p className="mt-6 text-gray-400">
+          <p className="mt-6 text-sm text-blue-200/60 font-light">
             Empowering vision through smart tech
           </p>
         </div>
-      </div>
 
-      {/* Decorative curved lines with different parallax rates */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"
-        style={{
-          transform: `translateY(${parallaxStyle.y * 0.3}px)`,
-          transition: "transform 0.1s ease-out",
-        }}
-      ></div>
-      <div
-        className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"
-        style={{
-          transform: `translateY(${parallaxStyle.y * 0.3}px)`,
-          transition: "transform 0.1s ease-out",
-        }}
-      ></div>
+        {/* Right content - Decorative Element */}
+        <div className="relative w-full md:w-1/2 flex items-center justify-center">
+          <div className="w-64 h-64 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-3xl"></div>
+        </div>
+      </div>
     </section>
   );
 }
