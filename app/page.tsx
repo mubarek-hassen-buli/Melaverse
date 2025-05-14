@@ -260,7 +260,7 @@ export default function Home() {
             {
               name: "Hayatuden Jemal",
               role: "CEO and Founder",
-              image: "/placeholder.svg?height=300&width=300",
+              image: "/images/orhan.png",
             },
             {
               name: "Mubarek Hassen",
