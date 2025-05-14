@@ -34,7 +34,7 @@ export function ParallaxSection() {
           </p>
           <Button
             variant="outline"
-            className="bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600 border-0 rounded-full px-8 py-3 text-lg font-medium shadow-lg transition-all hover:scale-105 hover:shadow-blue-500/25"
+            className="bg-white text-black hover:from-blue-600 hover:to-purple-600 border-0 rounded-full px-8 py-3 text-lg font-medium shadow-lg transition-all hover:scale-105 hover:shadow-blue-500/25"
           >
             Open Showcase
           </Button>

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ParallaxSection } from "@/components/parallax-section";
 import { FloatingNav } from "@/components/ui/floating-navbar";
@@ -83,15 +83,15 @@ export default function Home() {
 
         <ScrollAnimation variant="scale" delay={0.3} duration={0.8}>
           <div className="container mx-auto px-4 relative z-10">
-            <div className="w-full max-w-5xl mx-auto">
+            <div className="w-full">
               <div className="relative">
                 <div className="absolute -top-20 left-0 right-0 h-40 bg-blue-600/30 blur-[100px] rounded-full"></div>
                 <Image
                   src="/images/dashboard.png"
                   alt="MELAVERSE Dashboard Interface"
-                  width={1200}
-                  height={600}
-                  className="rounded-xl border border-purple-500/30 shadow-2xl shadow-purple-500/20"
+                  width={2000}
+                  height={800}
+                  className="w-full h-auto rounded-xl border border-purple-500/30 shadow-2xl shadow-purple-500/20"
                 />
               </div>
             </div>
@@ -273,9 +273,9 @@ export default function Home() {
               image: "/placeholder.svg?height=300&width=300",
             },
             {
-              name: "Orhan Osman",
+              name: "Fuad ",
               role: "Marketing manager",
-              image: "/placeholder.svg?height=300&width=300",
+              image: "/images/fuad.png",
             },
           ].map((member, index) => (
             <ScrollAnimation key={index} variant="fadeUp" delay={0.1 * index}>

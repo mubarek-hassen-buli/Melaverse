@@ -14,8 +14,7 @@ export function InfiniteCarousel() {
     { name: "Partner 2", logo: "/images/logo-02.png" },
     { name: "Partner 3", logo: "/images/logo-03.png" },
     { name: "Partner 4", logo: "/images/logo-04.png" },
-    { name: "Partner 5", logo: "/images/logo-01.png" },
-    { name: "Partner 6", logo: "/images/logo-02.png" },
+    { name: "Partner 5", logo: "/images/logo-05.png" },
   ];
 
   // Create a double array to ensure seamless infinite loop
