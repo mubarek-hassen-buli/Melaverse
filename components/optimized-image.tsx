@@ -10,13 +10,6 @@ interface OptimizedImageProps extends Omit<ImageProps, "onLoad"> {
   lowQualityPlaceholder?: boolean;
 }
 
-/**
- * OptimizedImage component that implements:
- * - Lazy loading with IntersectionObserver
- * - Blur-up image loading effect
- * - Proper sizing and quality optimization
- * - Fallback handling
- */
 export function OptimizedImage({
   src,
   alt,

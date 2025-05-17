@@ -1,9 +1,3 @@
-/**
- * Performance Optimizations for MELAVERSE
- *
- * This file contains utilities to improve website performance and scrolling smoothness.
- */
-
 import { useEffect, useState, useCallback } from "react";
 
 /**

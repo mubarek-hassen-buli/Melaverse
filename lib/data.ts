@@ -25,6 +25,11 @@ export const navItems = [
     link: "#vision",
     // icon: <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />,
   },
+  {
+    name: "solution",
+    link: "/solution",
+    // icon: <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />,
+  },
 ];
 export const testimonials = [
   {
