@@ -3,16 +3,15 @@
 import { CheckCircle2 } from "lucide-react";
 import { ScrollAnimation } from "./scroll-animation";
 import Image from "next/image";
-export default function TechStack() {
+
+export default function TechStack({ header }: { header: string }) {
   return (
     <section
       className="py-24 container mx-auto px-4 scroll-mt-20"
       id="services"
     >
       <ScrollAnimation variant="fadeUp">
-        <h2 className="text-5xl font-bold text-center mb-16">
-          Tech stack and services
-        </h2>
+        <h2 className="text-5xl font-bold text-center mb-16">{header}</h2>
       </ScrollAnimation>
       <div className="grid md:grid-cols-3 gap-8">
         {[

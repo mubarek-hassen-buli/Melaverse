@@ -1,9 +1,10 @@
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import { ScrollAnimation } from "@/components/scroll-animation";
+import TechStack from "@/components/Tech-Stack";
 import { Button } from "@/components/ui/button";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import { navItems } from "@/lib/data";
-import Image from "next/image";
+
 function Service() {
   return (
     <section>
@@ -35,25 +36,10 @@ function Service() {
           </div>
         </ScrollAnimation>
 
-        <div className="absolute bottom-0 left-0 w-full h-[300px] bg-gradient-to-t from-blue-500/20 to-transparent"></div>
-
-        <ScrollAnimation variant="scale" delay={0.3} duration={0.8}>
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="w-full">
-              <div className="relative">
-                <div className="absolute -top-20 left-0 right-0 h-40 bg-blue-600/30 blur-[100px] rounded-full"></div>
-                <Image
-                  src="/images/dashboard.png"
-                  alt="MELAVERSE Dashboard Interface"
-                  width={2000}
-                  height={800}
-                  className="w-full h-auto rounded-xl border border-purple-500/30 shadow-2xl shadow-purple-500/20"
-                />
-              </div>
-            </div>
-          </div>
-        </ScrollAnimation>
+        {/* <div className="absolute bottom-0 left-0 w-full h-[300px] bg-gradient-to-t from-blue-500/20 to-transparent"></div> */}
       </header>
+      {/* Tech Stack and Services */}
+      <TechStack header="What we Deliver" />
     </section>
   );
 }

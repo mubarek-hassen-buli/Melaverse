@@ -103,7 +103,7 @@ export default function Home() {
       {/* Designed To Move You */}
       <ParallaxSection />
       {/* Tech Stack and Services */}
-      <TechStack />
+      <TechStack header="Tech stack and services" />
       {/* Trusted Partners Section */}
       <section className="py-16 container mx-auto px-4">
         <ScrollAnimation variant="fadeUp">
