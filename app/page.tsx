@@ -16,6 +16,7 @@ import { AnimatedTestimonialsDemo } from "@/components/Testimonials";
 import Approach from "@/components/Approachs";
 import CoreContinuum from "@/components/Core-Continuum";
 import TechStack from "@/components/Tech-Stack";
+import TeamGrid from "@/components/TeamGrid";
 
 export default function Home() {
   return (
@@ -251,7 +252,7 @@ export default function Home() {
       </section>
 
       {/* Meet the Brains Section */}
-      <section className="py-24 container mx-auto px-4">
+      {/* <section className="py-24 container mx-auto px-4">
         <ScrollAnimation variant="fadeUp">
           <h2 className="text-5xl font-bold text-center mb-16">
             Meet the Brains
@@ -299,6 +300,11 @@ export default function Home() {
               </div>
             </ScrollAnimation>
           ))}
+        </div>
+      </section> */}
+      <section>
+        <div className="py-20">
+          <TeamGrid />
         </div>
       </section>
 
