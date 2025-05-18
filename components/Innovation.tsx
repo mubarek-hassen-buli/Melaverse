@@ -4,7 +4,6 @@ interface FeatureCardProps {
   title: string;
   description: string;
   image: string;
-  padding: number;
 }
 
 const FeatureCard = ({ title, description, image }: FeatureCardProps) => {

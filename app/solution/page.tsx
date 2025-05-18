@@ -7,13 +7,16 @@ import { navItems } from "@/lib/data";
 import Innovation from "@/components/Innovation";
 import { CallToAction } from "@/components/call-to-action";
 import { Footer } from "@/components/footer";
+import Link from "next/link";
 function Solution() {
   return (
     <section>
       <header className="relative">
         <nav className="container mx-auto flex items-center justify-between py-6 px-4">
           <div className="text-2xl font-bold flex items-center">
-            <span className="text-purple-500 mr-1">MELAVERSE</span>
+            <Link href="/">
+              <span className="text-purple-500 mr-1">MELAVERSE</span>
+            </Link>
           </div>
 
           <FloatingNav navItems={navItems} />

@@ -24,7 +24,9 @@ export default function Home() {
       <header className="relative">
         <nav className="container mx-auto flex items-center justify-between py-6 px-4">
           <div className="text-2xl font-bold flex items-center">
-            <span className="text-purple-500 mr-1">MELAVERSE</span>
+            <Link href="/">
+              <span className="text-purple-500 mr-1">MELAVERSE</span>
+            </Link>
           </div>
           {/* <div className="hidden md:flex items-center space-x-8">
             <Link
