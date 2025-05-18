@@ -4,7 +4,9 @@ import TechStack from "@/components/Tech-Stack";
 import { Button } from "@/components/ui/button";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import { navItems } from "@/lib/data";
-
+import Innovation from "@/components/Innovation";
+import { CallToAction } from "@/components/call-to-action";
+import { Footer } from "@/components/footer";
 function Service() {
   return (
     <section>
@@ -40,6 +42,12 @@ function Service() {
       </header>
       {/* Tech Stack and Services */}
       <TechStack header="What we Deliver" />
+      {/* Innovation */}
+      <Innovation />
+      {/* Call to Action */}
+      <CallToAction />
+      {/* Footer */}
+      <Footer />
     </section>
   );
 }
