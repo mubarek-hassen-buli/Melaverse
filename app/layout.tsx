@@ -3,6 +3,8 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { BackgroundBeams } from "@/components/ui/background-beams";
+
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -26,7 +28,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
-          <BackgroundBeams />
+          <div className=" h-full w-full">
+            <BackgroundBeams />
+          </div>
         </ThemeProvider>
       </body>
     </html>

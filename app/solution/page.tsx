@@ -7,7 +7,7 @@ import { navItems } from "@/lib/data";
 import Innovation from "@/components/Innovation";
 import { CallToAction } from "@/components/call-to-action";
 import { Footer } from "@/components/footer";
-function Service() {
+function Solution() {
   return (
     <section>
       <header className="relative">
@@ -52,4 +52,4 @@ function Service() {
   );
 }
 
-export default Service;
+export default Solution;

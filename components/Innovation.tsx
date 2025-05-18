@@ -7,17 +7,12 @@ interface FeatureCardProps {
   padding: number;
 }
 
-const FeatureCard = ({
-  title,
-  description,
-  image,
-  padding = 6,
-}: FeatureCardProps) => {
+const FeatureCard = ({ title, description, image }: FeatureCardProps) => {
   return (
     <Card
-      className={`p-${padding} rounded-2xl overflow-hidden relative h-full`}
+      className="p-12 rounded-2xl overflow-hidden relative h-full"
       style={{
-        background: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${image})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${image})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         border: "1px solid rgba(255, 255, 255, 0.05)",
@@ -52,26 +47,22 @@ const Innovation = () => {
           <FeatureCard
             title="Innovate with Purpose"
             description="We turn complex challenges into elegant tech solutions designed for impact, built for scale."
-            image="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800"
-            padding={12}
+            image="/images/gird-1.jpg"
           />
           <FeatureCard
             title="Design That Engages"
             description="Our UI/UX experts craft immersive experiences that connect brands with the people they serve."
             image="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800"
-            padding={12}
           />
           <FeatureCard
             title="Develop to Elevate"
             description="From websites to mobile apps, we build powerful platforms that push boundaries and expectations."
             image="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=800"
-            padding={12}
           />
           <FeatureCard
             title="Promote with Precision"
             description="Creative marketing meets smart data — delivering real growth through digital storytelling."
             image="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=800"
-            padding={12}
           />
         </div>
       </div>
